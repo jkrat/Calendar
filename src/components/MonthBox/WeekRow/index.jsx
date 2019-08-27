@@ -1,6 +1,6 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/styles';
-import DayOfMonth from './DayOfMonth';
+import DayOfMonth from '../DayOfMonth';
 
 const useStyles = makeStyles({
   root: {
