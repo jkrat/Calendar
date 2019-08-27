@@ -6,18 +6,18 @@ import YearCal from './components/YearCal';
 
 const useStyles = makeStyles({
   root: {}
-})
+});
 
 const App = () => {
   const classes = useStyles();
-    return (
-      <>
+  return (
+    <>
       <DateAppBar />
-        <Container maxWidth="lg" >
+      <Container maxWidth="lg">
         <YearCal year={2019} />
       </Container>
-      </>
-    );
-  }
+    </>
+  );
+};
 
 export default App;
