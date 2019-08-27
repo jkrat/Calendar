@@ -10,17 +10,17 @@ const useStyles = makeStyles({
   button: {}
 });
 
-const Navigation = ({ content }) => {
+const Navigation = ({ content, color }) => {
   const classes = useStyles();
   return (
     <div className={classes.container}>
-      <IconButton>
+      <IconButton color={color}>
         <KeyboardArrowLeftIcon />
       </IconButton>
-      <Button size="large" variant="outlined" className={classes.button}>
+      <Button color={color} size="large" variant="outlined" className={classes.button}>
         Today
       </Button>
-      <IconButton>
+      <IconButton color={color}>
         <KeyboardArrowRightIcon />
       </IconButton>
     </div>

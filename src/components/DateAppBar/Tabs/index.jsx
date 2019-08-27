@@ -9,7 +9,7 @@ const useStyles = makeStyles({
   }
 });
 
-const Tabs = ({ content }) => {
+const Tabs = ({ content, color = "default" }) => {
   const classes = useStyles();
   return (
       <ButtonGroup
@@ -17,10 +17,10 @@ const Tabs = ({ content }) => {
         variant="outlined"
         className={classes.group}
       >
-        <Button>Day</Button>
-        <Button>Week</Button>
-        <Button>Month</Button>
-        <Button>Year</Button>
+        <Button color={color}>Day</Button>
+        <Button color={color}>Week</Button>
+        <Button color={color}>Month</Button>
+        <Button color={color}>Year</Button>
       </ButtonGroup>
   );
 };
