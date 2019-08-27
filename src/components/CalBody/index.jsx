@@ -9,11 +9,7 @@ const useStyles = makeStyles({
 const CalBody = ({ layout, year }) => {
   const classes = useStyles();
 
-  return (
-    <div>
-      <CalLayout layout={layout} year={year} />
-    </div>
-  );
+  return <CalLayout layout={layout} year={year} />;
 };
 
 export default CalBody;
