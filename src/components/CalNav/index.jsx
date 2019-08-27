@@ -20,7 +20,7 @@ const useStyles = makeStyles({
   }
 });
 
-const DateAppBar = ({ title }) => {
+const CalNav = ({ title }) => {
   const classes = useStyles();
   return (
     <div className={classes.container}>
@@ -35,4 +35,4 @@ const DateAppBar = ({ title }) => {
   );
 };
 
-export default DateAppBar;
+export default CalNav;

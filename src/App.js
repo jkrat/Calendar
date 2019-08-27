@@ -1,8 +1,8 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/styles';
 import Container from '@material-ui/core/Container';
-import DateAppBar from './components/DateAppBar';
-import YearCal from './components/YearCal';
+import CalNav from './components/CalNav';
+import CalBody from './components/CalBody';
 
 const useStyles = makeStyles({
   root: {}
@@ -10,11 +10,14 @@ const useStyles = makeStyles({
 
 const App = () => {
   const classes = useStyles();
+
+  const layout = 'year';
+  const year = 2019;
   return (
     <>
-      <DateAppBar />
+      <CalNav />
       <Container maxWidth="lg">
-        <YearCal year={2019} />
+        <CalBody layout={layout} year={year} />
       </Container>
     </>
   );
