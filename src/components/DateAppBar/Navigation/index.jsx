@@ -6,21 +6,22 @@ import KeyboardArrowLeftIcon from '@material-ui/icons/KeyboardArrowLeft';
 import KeyboardArrowRightIcon from '@material-ui/icons/KeyboardArrowRight';
 
 const useStyles = makeStyles({
-  container: {},
-  button: {}
+  button: {
+    margin: '0 10px'
+  }
 });
 
-const Navigation = ({ content, color }) => {
+const Navigation = () => {
   const classes = useStyles();
   return (
-    <div className={classes.container}>
-      <IconButton color={color}>
+    <div>
+      <IconButton color="primary">
         <KeyboardArrowLeftIcon />
       </IconButton>
-      <Button color={color} size="large" variant="outlined" className={classes.button}>
+      <Button color="primary" size="large" className={classes.button}>
         Today
       </Button>
-      <IconButton color={color}>
+      <IconButton color="primary">
         <KeyboardArrowRightIcon />
       </IconButton>
     </div>

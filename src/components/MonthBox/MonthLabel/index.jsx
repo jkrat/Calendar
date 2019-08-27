@@ -7,15 +7,23 @@ const useStyles = makeStyles({
     height: 30,
     fontSize: 14,
     fontWeight: 500,
-    lineHeight: '20px',
+    lineHeight: '20px'
   }
 });
 
-const MonthLabel = ({ label }) => {
+const MonthLabel = ({ label, color }) => {
   const classes = useStyles();
   return (
-      <Typography variant="body2" align="center" display="block" className={classes.root}>{label}</Typography>
-  )
-}
+    <Typography
+      variant="body2"
+      align="center"
+      display="block"
+      color={color}
+      className={classes.root}
+    >
+      {label}
+    </Typography>
+  );
+};
 
 export default MonthLabel;

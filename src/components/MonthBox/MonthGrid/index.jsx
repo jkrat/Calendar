@@ -1,12 +1,10 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/styles';
-import WeekHeaders from './WeekHeaders';
-import MonthBody from './MonthBody';
+import WeekHeaders from '../WeekHeaders';
+import MonthBody from '../MonthBody';
 
 const useStyles = makeStyles({
-  root: {
-    
-  }
+  root: {}
 });
 
 const MonthGrid = ({ firstDayOfMonth }) => {
@@ -15,9 +13,9 @@ const MonthGrid = ({ firstDayOfMonth }) => {
   return (
     <div className={classes.root}>
       <WeekHeaders />
-      <MonthBody firstDayOfMonth={firstDayOfMonth}/>
+      <MonthBody firstDayOfMonth={firstDayOfMonth} />
     </div>
-  )
-}
+  );
+};
 
 export default MonthGrid;

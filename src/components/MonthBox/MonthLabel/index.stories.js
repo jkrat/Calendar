@@ -4,8 +4,9 @@ import { storiesOf } from '@storybook/react';
 import { muiTheme } from 'storybook-addon-material-ui';
 import { basicTheme } from '../../../../.storybook/muiTheme';
 
-import Tabs from './index';
+import MonthLabel from './index';
 
-storiesOf('App Bar', module)
+storiesOf('Month label', module)
   .addDecorator(muiTheme(basicTheme))
-  .add('Duration Tabs', () => <Tabs />);
+  .add('basic', () => <MonthLabel label="August" />)
+  .add('primary', () => <MonthLabel label="August" color="primary" />);

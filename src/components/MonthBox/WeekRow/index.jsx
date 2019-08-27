@@ -3,9 +3,7 @@ import { makeStyles } from '@material-ui/styles';
 import DayOfMonth from '../DayOfMonth';
 
 const useStyles = makeStyles({
-  root: {
-    
-  }
+  root: {}
 });
 
 const WeekRow = ({ dates }) => {
@@ -15,16 +13,16 @@ const WeekRow = ({ dates }) => {
       {dates.map(day => {
         let { key, date, outOfMonth, isWeekend } = day;
         return (
-          <DayOfMonth 
-            key={key} 
-            date={date} 
-            outOfMonth={outOfMonth} 
-            isWeekend={isWeekend}  
+          <DayOfMonth
+            key={key}
+            date={date}
+            outOfMonth={outOfMonth}
+            isWeekend={isWeekend}
           />
-        )
+        );
       })}
     </tr>
-  )
-}
+  );
+};
 
 export default WeekRow;

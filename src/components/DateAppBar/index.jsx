@@ -7,7 +7,7 @@ import Tabs from './Tabs';
 const useStyles = makeStyles({
   container: {
     width: '100%',
-    padding: '12px 0',
+    padding: '12px 20px',
     borderBottom: '1px solid gray',
     display: 'flex',
     justifyContent: 'space-between'
@@ -16,16 +16,19 @@ const useStyles = makeStyles({
     display: 'flex',
     justifyContent: 'center',
     flexDirection: 'column',
+    width: 200
   }
 });
 
-const DateAppBar = ({ content }) => {
+const DateAppBar = ({ title }) => {
   const classes = useStyles();
   return (
     <div className={classes.container}>
       <Tabs />
       <div className={classes.title}>
-      <Typography variant="h5" align="center"></Typography>
+        <Typography variant="h5" align="left">
+          {title}
+        </Typography>
       </div>
       <Navigation />
     </div>

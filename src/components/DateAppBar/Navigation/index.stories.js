@@ -6,11 +6,6 @@ import { basicTheme } from '../../../../.storybook/muiTheme';
 
 import Navigation from './index';
 
-storiesOf('Navigation', module)
+storiesOf('App Bar', module)
   .addDecorator(muiTheme(basicTheme))
-  .add('basic', () => (
-    <Navigation />
-  ))
-  .add('primary', () => (
-    <Navigation color="primary" />
-  ));
+  .add('Navigation', () => <Navigation />);

@@ -1,20 +1,13 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/styles';
 import MonthBox from '../MonthBox';
-import { isSameYear, addMonths, format } from 'date-fns'
+import { isSameYear, addMonths, format } from 'date-fns';
 
 const useStyles = makeStyles({
   root: {
     display: 'flex',
     justifyContent: 'center',
     flexWrap: 'wrap'
-  },
-  container: {
-    margin: '15px 10px',
-    width: 224,
-    height: 250,
-    display: 'inline-block',
-    textAlign: 'center'
   }
 });
 
@@ -27,19 +20,18 @@ const YearCal = ({ year }) => {
   while (isSameYear(firstDayofYear, date)) {
     monthsOfYear.push({
       name: format(date, 'MMMM'),
-      firstDay: date})
-    date = addMonths(date, 1)
+      firstDay: date
+    });
+    date = addMonths(date, 1);
   }
 
   return (
     <div className={classes.root}>
-    {monthsOfYear.map(month => (
-    <div className={classes.container}>
-      <MonthBox month={month} />
+      {monthsOfYear.map(month => (
+        <MonthBox key={month.name} month={month} />
+      ))}
     </div>
-    ))}
-    </div>
-  )
-}
+  );
+};
 
 export default YearCal;

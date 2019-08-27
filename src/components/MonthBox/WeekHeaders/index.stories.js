@@ -4,8 +4,8 @@ import { storiesOf } from '@storybook/react';
 import { muiTheme } from 'storybook-addon-material-ui';
 import { basicTheme } from '../../../../.storybook/muiTheme';
 
-import Tabs from './index';
+import WeekHeaders from './index';
 
-storiesOf('App Bar', module)
+storiesOf('Week Headers', module)
   .addDecorator(muiTheme(basicTheme))
-  .add('Duration Tabs', () => <Tabs />);
+  .add('basic', () => <WeekHeaders />);
