@@ -9,7 +9,7 @@ const useStyles = makeStyles({
     width: 'calc(100% / 7)',
     boxSizing: 'border-box',
     padding: 4,
-    border: '1px solid grey'
+    border: '1px solid grey',
   },
   head: outOfMonth => ({
     textAlign: 'right',
@@ -17,11 +17,11 @@ const useStyles = makeStyles({
     boxSizing: 'border-box',
     fontSize: 15,
     height: 20,
-    color: outOfMonth ? '#a7a3a3' : '#474747'
+    color: outOfMonth ? '#a7a3a3' : '#474747',
   }),
   body: {
-    height: 90
-  }
+    // height: 90,
+  },
 });
 
 const DayOfMonth = ({ date, outOfMonth, isWeekend }) => {
@@ -33,7 +33,7 @@ const DayOfMonth = ({ date, outOfMonth, isWeekend }) => {
       <Typography variant="body2" component="div" className={classes.head}>
         {dateToDisplay}
       </Typography>
-      <div className={classes.body} />
+      <div className={classes.body} id="body" />
     </td>
   );
 };

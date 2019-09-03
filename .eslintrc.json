@@ -1,5 +1,5 @@
 {
-  "extends": "eslint:recommended",
+  "extends": "airbnb",
   "env": {
     "browser": true,
     "es6": true
@@ -12,7 +12,8 @@
     "arrow-parens": [1, "as-needed"],
     "react/no-danger": 0,
     "react/forbid-prop-types": 0,
-    "react/jsx-filename-extension": 0
+    "react/jsx-filename-extension": 0,
+    "react/prop-types": 0
   },
   "parserOptions": {
     "sourceType": "module"
