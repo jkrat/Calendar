@@ -1,26 +1,28 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/styles';
-import WeekRow from '../WeekRow';
-import getDaysInMonth from '../utils';
+// import WeekRow from '../WeekRow';
+// import { getDaysInMonth } from '../utils';
 
 const useStyles = makeStyles({
   root: {
     width: '100%',
     borderCollapse: 'collapse',
   },
-  roo: rows => ({
+  roo: {
     width: '100%',
     position: 'absolute',
     overflowY: 'auto',
     overflowX: 'hidden',
     '& #body': {
-      height: `calc((100vh - 281px) / ${rows})`,
+      height: 'calc(100vh - 118px)',
     },
-  }),
+  },
+  day: {
+    border: '1px solid grey',
+  },
 });
 
-const MonthGrid = ({ firstDayOfMonth }) => {
-  const calendar = getDaysInMonth(firstDayOfMonth);
+const WeekGrid = ({ calendar }) => {
   const rows = calendar.length;
   const classes = useStyles(rows);
 
@@ -33,13 +35,20 @@ const MonthGrid = ({ firstDayOfMonth }) => {
         className={classes.root}
       >
         <tbody>
-          {calendar.map(week => (
-            <WeekRow key={week.index} dates={week.weeks} />
-          ))}
+          <tr>
+            {calendar.map(day => (
+              <td
+                key={day.index}
+                data-date={day.date}
+                className={classes.day}
+                id="body"
+              />
+            ))}
+          </tr>
         </tbody>
       </table>
     </div>
   );
 };
 
-export default MonthGrid;
+export default WeekGrid;

@@ -4,14 +4,14 @@ import {
   isBefore,
   isMonday,
   isSameMonth,
-  isWeekend
+  isWeekend,
 } from 'date-fns';
 
-export function getDaysInMonth(firstDayOfMonth) {
+export default function getDaysInMonth(firstDayOfMonth) {
   const firstDay = startOfWeek(firstDayOfMonth, { weekStartsOn: 1 });
   const lastDay = addDays(firstDay, 42);
 
-  let Calendar = [];
+  const Calendar = [];
   let date = firstDay;
   let index = 0;
 
@@ -19,17 +19,17 @@ export function getDaysInMonth(firstDayOfMonth) {
     if (isMonday(date)) {
       Calendar.push({
         index,
-        weeks: []
+        weeks: [],
       });
     }
-    Calendar[Calendar.length - 1]['weeks'].push({
+    Calendar[Calendar.length - 1].weeks.push({
       key: index,
       date,
       outOfMonth: !isSameMonth(date, firstDayOfMonth),
-      isWeekend: isWeekend(date)
+      isWeekend: isWeekend(date),
     });
     date = addDays(date, 1);
-    index++;
+    index += 1;
   }
 
   return Calendar;

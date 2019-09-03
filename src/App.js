@@ -4,13 +4,13 @@ import CalNav from './components/CalNav';
 import CalBody from './components/CalBody';
 
 const useStyles = makeStyles({
-  root: {}
+  root: {},
 });
 
 const App = () => {
   const classes = useStyles();
 
-  const layout = 'month';
+  const layout = 'week';
   const year = 2019;
   return (
     <>
