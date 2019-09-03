@@ -10,7 +10,7 @@ const useStyles = makeStyles({
 const App = () => {
   const classes = useStyles();
 
-  const layout = 'week';
+  const layout = 'day';
   const year = 2019;
   return (
     <>
