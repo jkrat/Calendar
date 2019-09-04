@@ -1,7 +1,7 @@
-import { isSameYear, addMonths, format } from 'date-fns';
+import { isSameYear, startOfYear, addMonths, format } from 'date-fns';
 
-export default function createMonthList(year) {
-  const firstDayofYear = new Date(year, 0, 1);
+export default function createMonthList(selectedDate) {
+  const firstDayofYear = startOfYear(selectedDate);
 
   const months = [];
   let date = firstDayofYear;

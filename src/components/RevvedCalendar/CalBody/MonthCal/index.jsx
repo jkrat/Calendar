@@ -2,13 +2,11 @@ import React from 'react';
 import WeekHeaders from './WeekHeaders';
 import MonthGrid from './MonthGrid';
 
-const date = new Date(2015, 4, 1);
-
-const index = () => (
+const MonthCal = ({ date }) => (
   <div>
     <WeekHeaders />
     <MonthGrid firstDayOfMonth={date} />
   </div>
 );
 
-export default index;
+export default MonthCal;

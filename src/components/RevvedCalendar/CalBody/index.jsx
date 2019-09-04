@@ -6,10 +6,10 @@ const useStyles = makeStyles({
   root: {},
 });
 
-const CalBody = ({ layout, year }) => {
+const CalBody = ({ date, layout }) => {
   const classes = useStyles();
 
-  return <CalLayout layout={layout} year={year} />;
+  return <CalLayout date={date} layout={layout} />;
 };
 
 export default CalBody;

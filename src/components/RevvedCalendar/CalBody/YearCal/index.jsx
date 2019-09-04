@@ -11,10 +11,10 @@ const useStyles = makeStyles({
   },
 });
 
-const YearCal = ({ year }) => {
+const YearCal = ({ date }) => {
   const classes = useStyles();
 
-  const months = createMonthList(year);
+  const months = createMonthList(date);
 
   return (
     <div className={classes.root}>

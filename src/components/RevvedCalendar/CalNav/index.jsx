@@ -3,6 +3,7 @@ import { makeStyles } from '@material-ui/styles';
 import Typography from '@material-ui/core/Typography';
 import Navigation from './Navigation';
 import Tabs from './Tabs';
+import createTitle from '../utils';
 
 const useStyles = makeStyles({
   container: {
@@ -16,15 +17,15 @@ const useStyles = makeStyles({
     display: 'flex',
     justifyContent: 'center',
     flexDirection: 'column',
-    width: 200,
   },
 });
 
-const CalNav = ({ title }) => {
+const CalNav = ({ date, layout, navigationTab }) => {
   const classes = useStyles();
+  const title = createTitle(date, layout);
   return (
     <div className={classes.container}>
-      <Tabs />
+      <Tabs layout={layout} navigationTab={navigationTab} />
       <div className={classes.title}>
         <Typography variant="h5" align="left">
           {title}

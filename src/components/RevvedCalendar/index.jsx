@@ -1,5 +1,6 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/styles';
+import { connect } from 'react-redux';
 import CalNav from './CalNav';
 import CalBody from './CalBody';
 
@@ -7,17 +8,20 @@ const useStyles = makeStyles({
   root: {},
 });
 
-const RevvedCalendar = () => {
+const RevvedCalendar = ({ date, layout }) => {
   const classes = useStyles();
 
-  const layout = 'day';
-  const date = new Date();
   return (
     <>
-      <CalNav />
-      <CalBody layout={layout} date={date} />
+      <CalNav date={date} layout={layout} />
+      <CalBody date={date} layout={layout} />
     </>
   );
 };
 
-export default RevvedCalendar;
+const mapStateToProps = state => ({
+  date: state.date,
+  layout: state.layout,
+});
+
+export default connect(mapStateToProps)(RevvedCalendar);
