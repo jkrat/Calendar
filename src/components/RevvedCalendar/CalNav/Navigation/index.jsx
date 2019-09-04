@@ -5,7 +5,11 @@ import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import KeyboardArrowLeftIcon from '@material-ui/icons/KeyboardArrowLeft';
 import KeyboardArrowRightIcon from '@material-ui/icons/KeyboardArrowRight';
-import { calendarForward, calendarBackward } from '../../../../redux/actions';
+import {
+  calendarForward,
+  calendarBackward,
+  selectDate,
+} from '../../../../redux/actions';
 
 const useStyles = makeStyles({
   button: {
@@ -18,6 +22,7 @@ const Navigation = ({
   layout,
   navigationForward,
   navigationBackward,
+  selectToday,
 }) => {
   const classes = useStyles();
   return (
@@ -28,7 +33,12 @@ const Navigation = ({
       >
         <KeyboardArrowLeftIcon />
       </IconButton>
-      <Button color="primary" size="large" className={classes.button}>
+      <Button
+        color="primary"
+        size="large"
+        className={classes.button}
+        onClick={() => selectToday(new Date())}
+      >
         Today
       </Button>
       <IconButton
@@ -53,6 +63,9 @@ const mapDispatchToProps = dispatch => {
     },
     navigationBackward: (date, layout) => {
       dispatch(calendarBackward(date, layout));
+    },
+    selectToday: date => {
+      dispatch(selectDate(date));
     },
   };
 };

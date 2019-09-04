@@ -27,8 +27,6 @@ export function calendarBackward(date, layout) {
 export function selectDate(date) {
   return {
     type: 'SELECT_DATE',
-    payload: {
-      date,
-    },
+    payload: date,
   };
 }

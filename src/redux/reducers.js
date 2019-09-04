@@ -13,7 +13,9 @@ export default function reducer(state = {}, action) {
         date: backward(action.payload.date, action.payload.layout),
       });
     case 'SELECT_DATE':
-      return state;
+      return Object.assign({}, state, {
+        date: action.payload,
+      });
     default:
       return state;
   }
