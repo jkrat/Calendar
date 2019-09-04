@@ -7,8 +7,8 @@ import KeyboardArrowRightIcon from '@material-ui/icons/KeyboardArrowRight';
 
 const useStyles = makeStyles({
   button: {
-    margin: '0 10px'
-  }
+    margin: '0 10px',
+  },
 });
 
 const Navigation = () => {

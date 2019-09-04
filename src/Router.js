@@ -7,7 +7,7 @@ const Router = () => (
   <BrowserRouter>
     <Switch>
       <Redirect exact from="/" to="/calendar" />
-      <Route exact path="/calendar" component={App} />
+      <Route exact path="/calendar" component={NotFound} />
       <Route path="/calendar/:duration" component={App} />
       {/* <Route path="/calendar/month" component={App} />
       <Route path="/calendar/Week" component={App} />

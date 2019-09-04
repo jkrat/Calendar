@@ -1,23 +1,6 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/styles';
-import CalNav from './components/CalNav';
-import CalBody from './components/CalBody';
+import RevvedCalendar from './components/RevvedCalendar';
 
-const useStyles = makeStyles({
-  root: {},
-});
-
-const App = () => {
-  const classes = useStyles();
-
-  const layout = 'day';
-  const year = 2019;
-  return (
-    <>
-      <CalNav />
-      <CalBody layout={layout} year={year} />
-    </>
-  );
-};
+const App = () => <RevvedCalendar />;
 
 export default App;

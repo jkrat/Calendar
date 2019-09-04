@@ -3,7 +3,7 @@ import { makeStyles } from '@material-ui/styles';
 import CalLayout from './CalLayout';
 
 const useStyles = makeStyles({
-  root: {}
+  root: {},
 });
 
 const CalBody = ({ layout, year }) => {

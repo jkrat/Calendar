@@ -10,14 +10,14 @@ const useStyles = makeStyles({
     padding: '12px 20px',
     borderBottom: '1px solid gray',
     display: 'flex',
-    justifyContent: 'space-between'
+    justifyContent: 'space-between',
   },
   title: {
     display: 'flex',
     justifyContent: 'center',
     flexDirection: 'column',
-    width: 200
-  }
+    width: 200,
+  },
 });
 
 const CalNav = ({ title }) => {

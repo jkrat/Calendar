@@ -1,8 +1,8 @@
 import React from 'react';
-import YearCal from '../YearCal';
-import MonthCal from '../MonthCal';
-import WeekCal from '../WeekCal';
-import DayCal from '../DayCal';
+import YearCal from './YearCal';
+import MonthCal from './MonthCal';
+import WeekCal from './WeekCal';
+import DayCal from './DayCal';
 
 function SelectLayout(layout) {
   switch (layout) {

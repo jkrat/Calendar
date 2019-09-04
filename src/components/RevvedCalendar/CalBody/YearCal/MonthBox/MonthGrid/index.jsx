@@ -4,7 +4,7 @@ import WeekHeaders from '../WeekHeaders';
 import MonthBody from '../MonthBody';
 
 const useStyles = makeStyles({
-  root: {}
+  root: {},
 });
 
 const MonthGrid = ({ firstDayOfMonth }) => {

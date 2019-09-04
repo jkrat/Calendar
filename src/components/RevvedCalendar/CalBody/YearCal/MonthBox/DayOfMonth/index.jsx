@@ -11,7 +11,7 @@ const useStyles = makeStyles({
     display: 'inline-block',
     textAlign: 'center',
     boxSizing: 'border-box',
-    paddingTop: 2
+    paddingTop: 2,
   },
   monthDate: outOfMonth => ({
     border: 'none',
@@ -25,8 +25,8 @@ const useStyles = makeStyles({
     fontSize: 15,
     lineHeight: '30px',
     fontWeight: 500,
-    color: outOfMonth ? '#a7a3a3' : '#474747'
-  })
+    color: outOfMonth ? '#a7a3a3' : '#474747',
+  }),
 });
 
 const DayOfMonth = ({ date, outOfMonth, isWeekend }) => {

@@ -9,8 +9,8 @@ const useStyles = makeStyles({
     width: 225,
     height: 250,
     display: 'inline-block',
-    textAlign: 'center'
-  }
+    textAlign: 'center',
+  },
 });
 
 const MonthBox = ({ month }) => {

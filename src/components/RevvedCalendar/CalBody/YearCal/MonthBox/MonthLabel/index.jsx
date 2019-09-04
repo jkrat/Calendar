@@ -7,8 +7,8 @@ const useStyles = makeStyles({
     height: 30,
     fontSize: 14,
     fontWeight: 500,
-    lineHeight: '20px'
-  }
+    lineHeight: '20px',
+  },
 });
 
 const MonthLabel = ({ label, color }) => {
