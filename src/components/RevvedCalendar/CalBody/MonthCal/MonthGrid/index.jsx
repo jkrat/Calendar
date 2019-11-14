@@ -26,12 +26,7 @@ const MonthGrid = ({ firstDayOfMonth }) => {
 
   return (
     <div className={classes.roo}>
-      <table
-        cellPadding="0"
-        cellSpacing="0"
-        borderCollapse="collapse"
-        className={classes.root}
-      >
+      <table cellPadding="0" cellSpacing="0" borderCollapse="collapse" className={classes.root}>
         <tbody>
           {calendar.map(week => (
             <WeekRow key={week.index} dates={week.weeks} />

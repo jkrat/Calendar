@@ -1,11 +1,4 @@
-import {
-  startOfWeek,
-  addDays,
-  isBefore,
-  isMonday,
-  isSameMonth,
-  isWeekend,
-} from 'date-fns';
+import { startOfWeek, addDays, isBefore, isMonday, isSameMonth, isWeekend, startOfMonth } from 'date-fns';
 
 export default function getDaysInMonth(firstDayOfMonth) {
   const firstDay = startOfWeek(firstDayOfMonth, { weekStartsOn: 1 });
@@ -33,4 +26,8 @@ export default function getDaysInMonth(firstDayOfMonth) {
   }
 
   return Calendar;
+}
+
+export function getFirstDayOfMonth(date) {
+  return startOfMonth(date);
 }
