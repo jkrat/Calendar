@@ -17,43 +17,26 @@ const Tabs = ({ layout, navigationTab }) => {
   const classes = useStyles();
   return (
     <ButtonGroup size="large" variant="outlined" color="primary">
-      <Button
-        onClick={() => navigationTab('day')}
-        className={layout === 'day' ? classes.active : ''}
-      >
+      <Button onClick={() => navigationTab('day')} className={layout === 'day' ? classes.active : ''}>
         Day
       </Button>
-      <Button
-        onClick={() => navigationTab('week')}
-        className={layout === 'week' ? classes.active : ''}
-      >
+      <Button onClick={() => navigationTab('week')} className={layout === 'week' ? classes.active : ''}>
         Week
       </Button>
-      <Button
-        onClick={() => navigationTab('month')}
-        className={layout === 'month' ? classes.active : ''}
-      >
+      <Button onClick={() => navigationTab('month')} className={layout === 'month' ? classes.active : ''}>
         Month
       </Button>
-      <Button
-        onClick={() => navigationTab('year')}
-        className={layout === 'year' ? classes.active : ''}
-      >
+      <Button onClick={() => navigationTab('year')} className={layout === 'year' ? classes.active : ''}>
         Year
       </Button>
     </ButtonGroup>
   );
 };
 
-const mapDispatchToProps = dispatch => {
-  return {
-    navigationTab: layout => {
-      dispatch(changeCalendarLayout(layout));
-    },
-  };
-};
+const mapDispatchToProps = dispatch => ({
+  navigationTab: layout => {
+    dispatch(changeCalendarLayout(layout));
+  },
+});
 
-export default connect(
-  null,
-  mapDispatchToProps
-)(Tabs);
+export default connect(null, mapDispatchToProps)(Tabs);

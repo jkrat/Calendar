@@ -1,3 +1,12 @@
+export function updateTransactionList(transactions) {
+  return {
+    type: 'UPDATE_TRANSACTION_LIST',
+    payload: {
+      transactions,
+    },
+  };
+}
+
 export function changeCalendarLayout(layout) {
   return {
     type: 'CHANGE_CALENDAR_LAYOUT',

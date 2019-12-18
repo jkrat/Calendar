@@ -28,21 +28,11 @@ const WeekGrid = ({ calendar }) => {
 
   return (
     <div className={classes.roo}>
-      <table
-        cellPadding="0"
-        cellSpacing="0"
-        borderCollapse="collapse"
-        className={classes.root}
-      >
+      <table cellPadding="0" cellSpacing="0" borderCollapse="collapse" className={classes.root}>
         <tbody>
           <tr>
             {calendar.map(day => (
-              <td
-                key={day.index}
-                data-date={day.date}
-                className={classes.day}
-                id="body"
-              />
+              <td key={`grid-${day.key}`} data-date={day.date} className={classes.day} id="body" />
             ))}
           </tr>
         </tbody>

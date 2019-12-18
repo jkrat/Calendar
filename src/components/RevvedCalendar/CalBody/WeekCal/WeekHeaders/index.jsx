@@ -27,12 +27,7 @@ const WeekHeaders = ({ headers }) => {
   return (
     <div className={classes.root}>
       {headers.map(day => (
-        <Typography
-          variant="body2"
-          component="div"
-          key={day.index}
-          className={classes.day}
-        >
+        <Typography variant="body2" component="div" key={`{header-${day.key}`} className={classes.day}>
           {day.heading}
         </Typography>
       ))}

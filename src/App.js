@@ -1,35 +1,30 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import axios from 'axios';
+import { connect } from 'react-redux';
 import RevvedCalendar from './components/RevvedCalendar';
+import { updateTransactionList } from './redux/actions';
 
-class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      date: new Date(),
-      transactions: {},
-    };
-  }
+const App = ({ fetchData }) => {
+  useEffect(() => {
+    const url = 'https://localhost:5001/Api/Transactions';
+    axios
+      .get(url)
+      .then(res => res.data)
+      .then(data => fetchData(data))
+      .catch(err => {
+        // handle error
+        console.log(err);
+      });
+  }, []);
 
-  componentWillMount() {
-    fetch('Api/Transactions')
-      .then(data => data.json())
-      .then(
-        result => {
-          console.log('connected');
-          this.setState({
-            transactions: result,
-          });
-        },
-        error => {
-          console.log(error);
-        }
-      );
-  }
+  return <RevvedCalendar />;
+};
 
-  render() {
-    return <RevvedCalendar />;
-  }
-}
+const mapDispatchToProps = dispatch => ({
+  fetchData: transactions => {
+    console.log(transactions);
+    dispatch(updateTransactionList(transactions));
+  },
+});
 
-export default App;
+export default connect(null, mapDispatchToProps)(App);
