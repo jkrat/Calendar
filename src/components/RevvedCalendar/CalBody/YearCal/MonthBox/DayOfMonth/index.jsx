@@ -29,7 +29,7 @@ const useStyles = makeStyles({
   }),
 });
 
-const DayOfMonth = ({ date, outOfMonth, isWeekend }) => {
+const DayOfMonth = ({ date, outOfMonth, isWeekend, transactionCount }) => {
   const classes = useStyles(outOfMonth);
 
   const dateToDisplay = format(date, 'dd');

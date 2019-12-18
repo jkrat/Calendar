@@ -3,7 +3,6 @@ import { forward, backward } from './utils';
 export default function reducer(state = {}, action) {
   switch (action.type) {
     case 'UPDATE_TRANSACTION_LIST':
-      console.log(action.payload.transactions[0]);
       return Object.assign({}, state, { transactions: action.payload.transactions });
     case 'CHANGE_CALENDAR_LAYOUT':
       return Object.assign({}, state, { layout: action.payload.layout });

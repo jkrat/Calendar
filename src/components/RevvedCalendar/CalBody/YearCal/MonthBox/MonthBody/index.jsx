@@ -1,13 +1,8 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import { makeStyles } from '@material-ui/styles';
-import {
-  startOfWeek,
-  addDays,
-  isBefore,
-  isMonday,
-  isSameMonth,
-  isWeekend,
-} from 'date-fns';
+import { startOfWeek, addDays, isBefore, isMonday, isSameMonth, isWeekend } from 'date-fns';
+import { transactionForMonthByDay } from '../../utils';
 import WeekRow from '../WeekRow';
 
 const useStyles = makeStyles({
@@ -28,8 +23,9 @@ const useStyles = makeStyles({
   },
 });
 
-const MonthBody = ({ firstDayOfMonth }) => {
+const MonthBody = ({ firstDayOfMonth, transactions }) => {
   const classes = useStyles();
+  const trans = transactionForMonthByDay(transactions, firstDayOfMonth);
   const firstDay = startOfWeek(firstDayOfMonth, { weekStartsOn: 1 });
   const lastDay = addDays(firstDay, 42);
 
@@ -47,6 +43,7 @@ const MonthBody = ({ firstDayOfMonth }) => {
     Calendar[Calendar.length - 1].weeks.push({
       key: index,
       date,
+      transactions: transactions[date],
       outOfMonth: !isSameMonth(date, firstDayOfMonth),
       isWeekend: isWeekend(date),
     });
@@ -67,4 +64,9 @@ const MonthBody = ({ firstDayOfMonth }) => {
   );
 };
 
-export default MonthBody;
+const mapStateToProps = state => {
+  const { transactions } = state;
+  return { transactions };
+};
+
+export default connect(mapStateToProps)(MonthBody);
