@@ -9,3 +9,7 @@ npm start
 ```
 
 The application is exposed on port `3000`: [http://localhost:3000](http://localhost:3000)
+
+
+
+![Year View](/public/year_view.png)
