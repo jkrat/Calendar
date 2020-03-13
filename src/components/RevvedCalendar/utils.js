@@ -22,4 +22,5 @@ export default function createTitle(date, layout) {
       title = 'Revved Calendar';
   }
   return title;
+  
 }
